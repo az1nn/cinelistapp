@@ -1,7 +1,12 @@
-import React , { useState, useEffect } from 'react';
+import React , { useState } from 'react';
 import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent } from 'react-pro-sidebar';
 
+import MenuButton from '../MenuButton/MenuButton';
+
+import "../../css/Menu.css"
 import "react-pro-sidebar/dist/css/styles.css";
+
+import { IoChevronBack, IoMenu } from "react-icons/io5";
 
 const LateralMenu = () => {
 
@@ -14,18 +19,40 @@ const LateralMenu = () => {
 
   return (
     <>
-      <ProSidebar id='lateral-menu' collapsed={menuCollapse} collapsedWidth='80px'>
-        <SidebarHeader>
-          <img src='../assets/logo.png' alt='logo' id='menu-logo'/>
-          <button onClick={menuMotion}>OPEN/CLOSE</button>
-        </SidebarHeader>
-        <SidebarContent>
-
-        </SidebarContent>
-        <SidebarFooter>
-          
-        </SidebarFooter>
-      </ProSidebar>;
+      <ProSidebar id='lateral-menu'collapsed={menuCollapse} collapsedWidth='80px'>
+        {menuCollapse ? (
+          <div>
+            <SidebarHeader className='remove-border'>
+              <div id='sidebar-header'>
+              <IoMenu onClick={menuMotion} className='menu-icon'/>
+              </div>
+            </SidebarHeader>
+            <SidebarFooter className='remove-border'>
+            
+            </SidebarFooter>
+          </div>  
+        ) : (
+          <div>
+            <SidebarHeader className='remove-border'>
+              <div id='sidebar-header-open'>
+              <IoChevronBack onClick={menuMotion} className='menu-icon-close'/>
+              </div>
+              <div id='logo-container'><img src='../assets/logo.png' alt='logo' id='menu-logo'/></div>
+            </SidebarHeader>
+            <SidebarContent id='menu-items'>
+              <div>
+                <MenuButton title='Movies'/>
+                <MenuButton title='Series'/>
+              </div>
+            </SidebarContent>
+            <SidebarFooter className='remove-border'>
+            
+            </SidebarFooter>
+          </div>
+        )}
+        
+        
+      </ProSidebar>
     </>
   );
 };

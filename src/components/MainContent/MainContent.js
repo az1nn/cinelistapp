@@ -1,5 +1,7 @@
 import React , { useState, useEffect } from 'react';
 
+import "../../css/Content.css"
+
 const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=d7f2b7f08d529ee3e6269aa5f1ec187c&sort_by=popularity.desc&year=2020,2021,2022"
 
 const MainContent = () => {
@@ -50,10 +52,16 @@ const MainContent = () => {
         {moviesList.map((info, index) => {
           return (
             <div key={index} className='movie-container'>
-              <h3>{info.title}</h3>
               <img src={IMAGE_URL + info.poster_path} className='movie-poster' alt={info.title}/>
-              <p>{info.vote_average}</p>
-              <p>{info.vote_count}</p>
+              <div className='box-movie'>
+                <div className='title-container'>
+                  <h3>{info.title}</h3>
+                </div>
+                <div className='note-container'>
+                  <p className='note-txt'>{info.vote_average}</p>
+                </div>
+                <p className='note-count'>Total votes: {info.vote_count}</p>
+              </div>
             </div>
           )
         })}
