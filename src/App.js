@@ -1,12 +1,12 @@
 import React from 'react';
+
 import MainContent from './components/MainContent/MainContent';
+import LateralMenu from './components/LateralMenu/LateralMenu';
 
 function App() {
   return (
     <div className="App">
-      <div id='lateral-menu'>
-        <img src='../assets/logo.png' alt='logo' id='menu-logo'/>
-      </div>
+      <LateralMenu />
       <MainContent />
     </div>
   );
