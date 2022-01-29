@@ -10,7 +10,7 @@ import { IoChevronBack, IoMenu } from "react-icons/io5";
 
 const LateralMenu = () => {
 
-  const [menuCollapse, setMenuCollapse] = useState(false)
+  const [menuCollapse, setMenuCollapse] = useState(true)
 
   const menuMotion = () => {
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true)

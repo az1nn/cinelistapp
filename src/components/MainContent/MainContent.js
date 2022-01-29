@@ -50,6 +50,16 @@ const MainContent = () => {
       <div id='all-movies-container'>
   
         {moviesList.map((info, index) => {
+
+          const setClassNameRate = (val) => {
+            if(val >= 7) 
+              return 'note-plus7 note-txt'
+            else if (val >= 5)
+              return 'note-plus5 note-txt'
+            else
+             return 'note-minus5 note-txt'
+          }
+
           return (
             <div key={index} className='movie-container'>
               <img src={IMAGE_URL + info.poster_path} className='movie-poster' alt={info.title}/>
@@ -58,7 +68,8 @@ const MainContent = () => {
                   <h3>{info.title}</h3>
                 </div>
                 <div className='note-container'>
-                  <p className='note-txt'>{info.vote_average}</p>
+                  
+                  <p className={setClassNameRate(info.vote_average)}>{info.vote_average}</p>
                 </div>
                 <p className='note-count'>Total votes: {info.vote_count}</p>
               </div>
@@ -66,8 +77,10 @@ const MainContent = () => {
           )
         })}
       </div>
-      <button onClick={pageChangeLess}>BACK</button>
-      <button onClick={pageChangePlus}>NEXT</button>
+      <div id='page-button-container'>
+        <button onClick={pageChangeLess} className='page-button'>PREVIOUS</button>
+        <button onClick={pageChangePlus} className='page-button'>NEXT</button>
+      </div>
     </div>
   )
 };
