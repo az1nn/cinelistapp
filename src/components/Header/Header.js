@@ -2,12 +2,15 @@ import React from 'react';
 
 import { IoPersonOutline, IoChevronDown, IoSearch } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({ setSearchValue }) => {
+  
+  const inputRef = React.createRef();
+
   return (
     <div id='header'>
       <div id='header-items'>
         <div id='search-bar'>
-          <input type='search' placeholder='Search...' id='search-input'/>
+          <input type='search' ref={inputRef} placeholder='Search...' id='search-input' onChange={() => setSearchValue(inputRef.current.value)}/>
           <IoSearch id='search-logo'/>
         </div>
         <div id='user-items'>

@@ -17,18 +17,27 @@ const MovieModal = ({ showModal, setShowModal, info, IMAGE_URL }) => {
     }
   }
 
+  const setClassNameRate = (val) => {
+    if(val >= 7) 
+      return 'note-plus7'
+    else if (val >= 5)
+      return 'note-plus5'
+    else
+      return 'note-minus5'
+  }
+
   return (
     <div>
       {showModal ? (
         <div id='modal-bg' ref={modalRef} onClick={closeModalBg}>
           <div id='modal'>
             <div id='modal-img'>
-              <img src={IMAGE_URL + info.poster_path}/>
+              <img src={IMAGE_URL + info.poster_path} alt='movie poster'/>
             </div>
             <div id='modal-infos'>
               <div id='title-votes'>
                 <h4>{info.title}</h4>
-                <p id='modal-note-txt'>{info.vote_average}</p>
+                <p id='modal-note-txt'className={setClassNameRate(info.vote_average)}>{info.vote_average}</p>
               </div>
               <div id='more-infos'>
                 <p>Release Date:  {info.release_date}</p>

@@ -10,6 +10,9 @@
   justify-content: center;
   font-family: 'Roboto', sans-serif;
 }
+#main {
+  width: 100%;
+}
 #header {
   height: 10vh;
   background-color: #212329;
