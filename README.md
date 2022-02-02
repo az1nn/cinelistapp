@@ -16,7 +16,7 @@
 
 <h3> Acessar:</h3>
 
-<li><a href=""> Acessar </a></li
+<li><a href="https://cinelistapp.herokuapp.com/movies"> Acessar </a></li
 
 <h3>Imagens:</h3>
 
