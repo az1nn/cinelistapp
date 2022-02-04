@@ -41,8 +41,9 @@ const LateralMenu = () => {
             </SidebarHeader>
             <SidebarContent id='menu-items'>
               <div>
-                <MenuButton title='Movies'/>
-                <MenuButton title='Series'/>
+                <MenuButton link_to={"/"} title='Home'/>
+                <MenuButton link_to={"/movies"} title='Movies'/>
+                <MenuButton link_to={"/series"} title='Series'/>
               </div>
             </SidebarContent>
             <SidebarFooter className='remove-border'>

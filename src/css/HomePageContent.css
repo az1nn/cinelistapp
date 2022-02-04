@@ -1,0 +1,76 @@
+#home-content-container {
+  background-color: #212329;
+  color: white;
+  min-width: 100%;
+  width: 100%;
+  height: 90vh;
+  overflow-y: scroll;
+}
+h2 {
+  color: #6F6F7D;
+  font-size: 28px;
+  margin-top: 20px;
+}
+#title-line-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-title {
+  content: '';
+  display: block;
+  margin-top: 10px;
+  width: 26%;
+  height: 2px;
+  background-color: #6F6F7D;
+}
+#all-home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+#hp-movies-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#hp-movies-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  width: 90%;
+}
+.carroussel-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carroussel-items-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.carroussel-item {
+  border: 4px solid #6F6F7D;
+  border-radius: 30px;
+  max-width: 240px;
+  padding: 12px 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.carroussel-item:hover .carroussel-item-title { 
+  text-decoration: underline;
+}
+.carroussel-item-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0px;
+}
+.carroussel-item img {
+  width: 80%;
+  border-radius: 20px;
+}

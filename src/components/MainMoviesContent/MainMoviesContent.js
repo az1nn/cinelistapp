@@ -7,7 +7,7 @@ import "../../css/Content.css"
 const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=d7f2b7f08d529ee3e6269aa5f1ec187c&sort_by=popularity.desc&year=2020,2021,2022"
 const SEARCH_URL = "https://api.themoviedb.org/3/search/movie?api_key=d7f2b7f08d529ee3e6269aa5f1ec187c&language=en-US&page=1&include_adult=false&query="
 
-const MainContent = ({ searchValue }) => {
+const MainMovieContent = ({ searchValue }) => {
   
   const [moviesList, setMoviesList] = useState([]);
   const [whatPageIs, setNewPage] = useState(1)
@@ -15,7 +15,7 @@ const MainContent = ({ searchValue }) => {
   const [showModal, setShowModal] = useState(false)
   const [modalInfo, setModalInfo] = useState('')
   const [resultsLength, setResultsLength] = useState(true)
-  const [areSearching, setAreSearching] = useState({ state: false, title: "Popular Recent Movies"})
+  const [areSearching, setAreSearching] = useState({ state: false, title: "Popular Movies"})
 
 
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/'
@@ -71,7 +71,7 @@ const MainContent = ({ searchValue }) => {
             .then((data) => {
               setMoviesList(data.results)
               setResultsLength(true)
-              setAreSearching({ state: false, title: "Popular Recent Movies"})
+              setAreSearching({ state: false, title: "Popular Movies"})
             })
       }
   }, [searchValue])
@@ -130,4 +130,4 @@ const MainContent = ({ searchValue }) => {
   )
 };
 
-export default MainContent;
+export default MainMovieContent;
