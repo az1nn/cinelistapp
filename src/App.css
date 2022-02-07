@@ -38,6 +38,7 @@
 #search-bar {
   position: relative;
   width: min-content;
+  min-height: 6vh;
 }
 #search-input {
   width: 300px;

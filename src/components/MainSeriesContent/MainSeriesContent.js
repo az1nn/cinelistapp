@@ -7,7 +7,7 @@ import "../../css/Content.css"
 const API_URL = "https://api.themoviedb.org/3/tv/popular?api_key=d7f2b7f08d529ee3e6269aa5f1ec187c&language=en-US"
 const SEARCH_URL = "https://api.themoviedb.org/3/search/tv?api_key=d7f2b7f08d529ee3e6269aa5f1ec187c&language=en-US&page=1&include_adult=false&query="
 
-const MainSeriesContent = ({ searchValue }) => {
+const MainSeriesContent = ({ searchValue, setShowSearch }) => {
   
   const [moviesList, setMoviesList] = useState([]);
   const [whatPageIs, setNewPage] = useState(1)
@@ -76,6 +76,8 @@ const MainSeriesContent = ({ searchValue }) => {
             })
       }
   }, [searchValue])
+
+  setShowSearch(true)
   
   return (
     <div id='content-container'>

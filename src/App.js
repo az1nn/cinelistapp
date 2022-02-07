@@ -12,25 +12,26 @@ import SeriesPage from './components/SeriesPage/SeriesPage';
 function App() {
 
   const [searchValue, setSearchValue] = useState('')
+  const [showSearch, setShowSearch] = useState('')
 
   return (
     <Router>
       <div className="App">
         <LateralMenu />
         <div id='main'>
-          <Header setSearchValue={setSearchValue}/>
+          <Header setSearchValue={setSearchValue} showSearch={showSearch}/>
           <Routes>
             <Route path='/' element={
-              <HomePage />
+              <HomePage setShowSearch={setShowSearch} />
             }/>
             <Route path='movies' element={
               <MoviesPage>
-                <MainMoviesContent searchValue={searchValue}/>
+                <MainMoviesContent searchValue={searchValue} setShowSearch={setShowSearch} />
               </MoviesPage>
             }/>
             <Route path='series' element={
               <SeriesPage>
-                <MainSeriesContent searchValue={searchValue}/>
+                <MainSeriesContent searchValue={searchValue} setShowSearch={setShowSearch} />
               </SeriesPage>
             }/>
           </Routes>

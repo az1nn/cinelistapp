@@ -9,7 +9,7 @@ import "../../css/HomePageContent.css"
 
 import { IoChevronBack, IoChevronForward, IoChevronUp } from "react-icons/io5";
 
-const HomePage = () => {
+const HomePage = ({ setShowSearch }) => {
 
   const scroll = Scroll.animateScroll;
   const scroller = Scroll.scroller;
@@ -91,6 +91,7 @@ const HomePage = () => {
   }
   const itsAMovie = "movie"
   const itsASerie = "serie"
+  setShowSearch(false)
 
   return (
     <div id='home-content-container'>
